@@ -127,14 +127,18 @@ function M.setup_mappings()
 
   vim.api.nvim_set_keymap("o", ',', "<Cmd>lua require('until').until_coma(',')<CR>", opts)
   vim.api.nvim_set_keymap("o", '.', "<Cmd>lua require('until').until_coma('.')<CR>", opts)
+  vim.api.nvim_set_keymap("o", '"', "<Cmd>lua require('until').simple_until('\"')<CR>", opts)
+  vim.api.nvim_set_keymap("o", "'", "<Cmd>lua require('until').simple_until(\"'\")<CR>", opts)
+  -- vim.api.nvim_set_keymap("o", ";", "<Cmd>lua require('until').simple_until(';')<CR>", opts)
+
   vim.api.nvim_set_keymap("o", ']', "<Cmd>lua require('until').until_bracket(']')<CR>", opts)
   vim.api.nvim_set_keymap("o", '}', "<Cmd>lua require('until').until_bracket('}')<CR>", opts)
   vim.api.nvim_set_keymap("o", ')', "<Cmd>lua require('until').until_bracket(')')<CR>", opts)
+  vim.api.nvim_set_keymap("o", '>', "<Cmd>lua require('until').until_bracket('>')<CR>", opts)
   vim.api.nvim_set_keymap("o", '(', "<Cmd>lua require('until').simple_until('(')<CR>", opts)
   vim.api.nvim_set_keymap("o", '[', "<Cmd>lua require('until').simple_until('[')<CR>", opts)
   vim.api.nvim_set_keymap("o", '{', "<Cmd>lua require('until').simple_until('{')<CR>", opts)
-  vim.api.nvim_set_keymap("o", '"', "<Cmd>lua require('until').simple_until('\"')<CR>", opts)
-  vim.api.nvim_set_keymap("o", "'", "<Cmd>lua require('until').simple_until(\"'\")<CR>", opts)
+  vim.api.nvim_set_keymap("o", '<', "<Cmd>lua require('until').simple_until('<')<CR>", opts)
 end
 
 function M.setup(user_opts)
